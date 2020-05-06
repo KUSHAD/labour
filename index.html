@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>LABOURS HELP FORM</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+		<script src="../HELP/FORM.js"></script>
+		<script src="../HELP/LABOUR.js"></script>
+		<style>
+			body {
+				margin:0;
+				margin-left:45px;
+				padding:0;
+				overflow: hidden;
+			}
+	        canvas {
+				margin:auto;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
+		<script>
+				var firebaseConfig = {
+					apiKey: "AIzaSyBGWL1gilmWPezZQIWYkiJZC4otw3ZhnBk",
+					authDomain: "labour-form-database.firebaseapp.com",
+					databaseURL: "https://labour-form-database.firebaseio.com",
+					projectId: "labour-form-database",
+					storageBucket: "labour-form-database.appspot.com",
+					messagingSenderId: "313237923050",
+					appId: "1:313237923050:web:182614429aad54ee4fa393"
+			};
+		firebase.initializeApp(firebaseConfig);
+		</script>
+		<script src="sketch.js"></script>
+	</body>
+</html>
