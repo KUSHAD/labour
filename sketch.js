@@ -10,6 +10,5 @@ function draw() {
 	form.display();
 	form.button.mousePressed(()=>{
 		form.hide();
-		form.update();
 	})
 }

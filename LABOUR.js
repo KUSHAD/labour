@@ -1,8 +1,8 @@
 class Labour{
     constructor(){
-        this.index = null;
+        this.index = 0;
         this.name = null;
-        this.age = null;
+        this.DOB = null;
         this.profession = null;
         this.homeDistrict = null;
         this.homeAddress = null;
@@ -25,10 +25,10 @@ class Labour{
     });
   }
   update(){
-    var labourIndex="Labours/labour"+this.index+1;
+    var labourIndex="Labours/labour"+this.index;
     database.ref(labourIndex).set({
         Name: this.name,
-        Age: this.age,
+        DOB: this.DOB,
         Profession: this.profession,
         Home_District: this.homeDistrict,
         Home_Adress: this.homeAddress,
@@ -40,10 +40,4 @@ class Labour{
         ID_Number: this.IdNumber
     });
 }
-static getPlayerInfo(){
-    var labourInfoRef = database.ref('labours');
-    labourInfoRef.on("value",(data)=>{
-      allPlayers = data.val();
-    })
-  }
 }

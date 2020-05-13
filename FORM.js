@@ -98,9 +98,6 @@ class Form{
         this.button=createButton("SUBMIT");
    }
     display(){
-        labour=new Labour();
-        labour.index=labour.index+1;
-        labour.updateCount(labour.index);
         this.header.html("LABOUR DETAILS FORM");
         this.header.position(windowWidth/2-150,windowHeight/20);
         this.nLabel.html("NAME:-");
@@ -140,9 +137,24 @@ class Form{
         this.vINInput.position(windowWidth/2+200,windowHeight/7+395+20);
         this.checkBox.position(windowWidth/2-400,windowHeight/7+500);
         this.button.position(windowWidth/2,windowHeight/7+525);
+            labour=new Labour();
+            labour.name=this.nInput.value();
+            labour.DOB=this.dobInput.value();
+            labour.profession=this.pInput.value();
+            labour.homeDistrict=this.dSel.value();
+            labour.homeAddress=this.aDInput.value();
+            labour.workingState=this.sSSel.value();
+            labour.workingAdress=this.sSAInput.value();
+            labour.phone=this.phInput.value();
+            labour.complaint=this.cSel.value();
+            labour.govtIdType=this.vITSel.value();
+            labour.IdNumber=this.vINInput.value();
     }
     hide(){
         if(this.checkBox.checked()){
+                labour.index=labour.index+1;
+                labour.updateCount(labour.index);
+                labour.update();
                 this.greeting.html("YOU HAVE SUBMITTED YOUR FORM SUCCESSFULLY");
                 this.inst.html("PLEASE REFRESH THE PAGE FOR YOUR NEXT ENTRY");
                 this.greeting.position(windowWidth/3-100,windowHeight/7);
@@ -177,21 +189,5 @@ class Form{
             alert("PLEASE CHECK THE CHECKBOX AND THEN SUBMIT THE FORM");
         }
     }
-    update(){
-        var labourIndex="Labours/labour"+labour.index;
-        console.log(labourIndex);
-        database.ref(labourIndex).update({
-            Name: this.nInput.value(),
-            Age: this.dobInput.value(),
-            Profession: this.pInput.value(),
-            Home_District: this.dSel.value(),
-            Home_Adress: this.aDInput.value(),
-            Working_State_Or_UT: this.sSSel.value(),
-            Working_State_Or_UT_Adress: this.sSAInput.value(),
-            Phone: this.phInput.value(),
-            Complaint:this.cSel.value(),
-            GOVT_ID_Type: this.vITSel.value(),
-            ID_Number: this.vINInput.value()
-        });
-    }
+   
 }
